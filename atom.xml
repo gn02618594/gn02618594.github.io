@@ -6,7 +6,7 @@
   <link href="https://gn02618594.github.io/atom.xml" rel="self"/>
   
   <link href="https://gn02618594.github.io/"/>
-  <updated>2020-10-25T15:11:37.438Z</updated>
+  <updated>2020-10-31T08:07:40.147Z</updated>
   <id>https://gn02618594.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重灌 Windows 作業系統時，不小心使用 diskpart 指令去 clean 硬碟，救援硬碟的方法</title>
+    <link href="https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/"/>
+    <id>https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/</id>
+    <published>2020-10-31T08:05:34.000Z</published>
+    <updated>2020-10-31T08:07:40.147Z</updated>
+    
+    
+    
+    
+    
+    <category term="w3HexSchool" scheme="https://gn02618594.github.io/tags/w3HexSchool/"/>
+    
+    <category term="windows" scheme="https://gn02618594.github.io/tags/windows/"/>
+    
+    <category term="diskpart" scheme="https://gn02618594.github.io/tags/diskpart/"/>
+    
+    <category term="testdisk" scheme="https://gn02618594.github.io/tags/testdisk/"/>
+    
+  </entry>
   
   <entry>
     <title>使用 JS 以及 HTML 做一個簡易的留言版</title>

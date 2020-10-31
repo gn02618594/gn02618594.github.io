@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/</loc>
+    
+    <lastmod>2020-10-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://gn02618594.github.io/2020/10/25/use-javascript-to-do-a-easy-message-board/</loc>
     
     <lastmod>2020-10-25</lastmod>
@@ -208,6 +215,27 @@
   
   <url>
     <loc>https://gn02618594.github.io/tags/hexo/</loc>
+    <lastmod>2020-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gn02618594.github.io/tags/windows/</loc>
+    <lastmod>2020-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gn02618594.github.io/tags/diskpart/</loc>
+    <lastmod>2020-10-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://gn02618594.github.io/tags/testdisk/</loc>
     <lastmod>2020-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
