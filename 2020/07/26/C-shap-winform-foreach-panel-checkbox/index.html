@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>C# WINFROM 中 CheckBox 共用事件 | 王子の技術部落</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="這一篇紀錄使用 C# 去寫 WINFORM 時所有的 CheckBox 使用同一個事件這樣如果在新增選項時，就不用再去多寫相同的程式碼">
+<meta name="keywords" content="w3HexSchool,C#,WINFROM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C# WINFROM 中 CheckBox 共用事件">
+<meta property="og:url" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;07&#x2F;26&#x2F;C-shap-winform-foreach-panel-checkbox&#x2F;index.html">
+<meta property="og:site_name" content="王子の技術部落">
+<meta property="og:description" content="這一篇紀錄使用 C# 去寫 WINFORM 時所有的 CheckBox 使用同一個事件這樣如果在新增選項時，就不用再去多寫相同的程式碼">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;07&#x2F;26&#x2F;C-shap-winform-foreach-panel-checkbox&#x2F;1.jpg">
+<meta property="og:updated_time" content="2020-07-26T15:00:58.118Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;07&#x2F;26&#x2F;C-shap-winform-foreach-panel-checkbox&#x2F;1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="王子の技術部落" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo" style="color: #000">王子の技術部落</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle" style="color: #000">隨做筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://gn02618594.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-C-shap-winform-foreach-panel-checkbox" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/26/C-shap-winform-foreach-panel-checkbox/" class="article-date">
+  <time datetime="2020-07-26T13:59:33.000Z" itemprop="datePublished">2020-07-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C# WINFROM 中 CheckBox 共用事件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>這一篇紀錄使用 C# 去寫 WINFORM 時所有的 CheckBox 使用同一個事件<br>這樣如果在新增選項時，就不用再去多寫相同的程式碼</p>
+<a id="more"></a>
+
+<p>像這邊有三個選項<br><img src="1.jpg" alt=""></p>
+<p>如果是用這種寫法</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(checkbox1.Checked)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span></pre></td></tr></table></figure>
+<p>當我每新增一個選項時<br>我是不是就要在去多寫</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(checkbox2.Checked)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(checkbox3.Checked)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#123;&#125;</span></pre></td></tr></table></figure>
+
+<p>這樣的情形<br>可能會讓程式碼變得有點多<br>並且也不好維護</p>
+<p>這個時候如果我直接把所有的 checkbox 放在一個區塊裡 像是 panel<br>並且用迴圈去判斷 panel 裡的所有 checkbox<br>這樣當我新增一個 checkbox 時我就不用再去寫重複的程式碼<br>只需要特別設定 checkbox 的命名就可以了</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">CheckListAdd</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">foreach</span> (Control c <span class="keyword">in</span> panel1.Controls)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">if</span> (c <span class="keyword">is</span> CheckBox)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">		&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">			<span class="keyword">if</span> (((CheckBox)c).Checked == <span class="literal">true</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">			&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">			</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">			&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>我也可以寫一些 checkbox 的事件<br>並給所有的 checkbox 使用</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;<span class="keyword">string</span>&gt; CheckText = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span>新增自定義事件，所有CheckBox_CheckedChanged共用<span class="doctag">&lt;/summary&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">chk_CheckedChanged</span>(<span class="params"><span class="keyword">object</span> sender, EventArgs e</span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">string</span> chk = ((CheckBox)sender).Name.Substring(<span class="number">3</span>, <span class="number">2</span>).ToString();	</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">if</span> (CheckTextLast.Contains(chk))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">if</span> (((CheckBox)sender).Checked == <span class="literal">false</span>)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">		&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">			MessageBox.Show(<span class="string">"不加"</span>+((CheckBox)sender).Text);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">		&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">else</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">	&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">		CheckText.Add(((CheckBox)c).Name.Substring(<span class="number">3</span>, <span class="number">2</span>).ToString());</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://gn02618594.github.io/2020/07/26/C-shap-winform-foreach-panel-checkbox/" data-id="ckgxeefye0001gouq7rbr5t0x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WINFROM/" rel="tag">WINFROM</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/08/02/C-sharp-image-operating/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          C# WINFROM 中一些圖檔操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/19/different-form-share-one-class/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C# WINFORM 中不同 Form 要使用相同資料</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/" rel="tag">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UnitTest/" rel="tag">UnitTest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WINFROM/" rel="tag">WINFROM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/circleci/" rel="tag">circleci</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc/" rel="tag">mvc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E5%8F%AC/" rel="tag">教召</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASP-NET/" style="font-size: 14px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 18px;">C#</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/UnitTest/" style="font-size: 10px;">UnitTest</a> <a href="/tags/WINFROM/" style="font-size: 16px;">WINFROM</a> <a href="/tags/circleci/" style="font-size: 10px;">circleci</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/w3HexSchool/" style="font-size: 20px;">w3HexSchool</a> <a href="/tags/%E6%95%99%E5%8F%AC/" style="font-size: 10px;">教召</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 10px;">生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/25/use-javascript-to-do-a-easy-message-board/">使用 JS 以及 HTML 做一個簡易的留言版</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/18/SQL-LocalDB-Different-version-not-open/">舊版本 SQL SERVR 無法開啟新版本 LocalDB</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/06/use-circleci-to-pratice-CI/">使用 CircleCI 練習 CI/CD</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/04/Use-C-Sharp-To-UnitTest/">使用 C# 與 Visual Studio 練習簡單的單元測試</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/27/MS-SQL-Installer/">SQL-SERVER 安裝</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Prince<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
