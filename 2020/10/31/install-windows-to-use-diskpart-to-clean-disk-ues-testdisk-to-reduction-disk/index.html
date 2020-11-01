@@ -7,16 +7,25 @@
   
   <title>重灌 Windows 作業系統時，不小心使用 diskpart 指令去 clean 硬碟，救援硬碟的方法 | 王子の技術部落</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="專攻C# WINFROM，最近在學JS">
+  <meta name="description" content="這禮拜都在重灌電腦但在重灌的時候發生了一件事!!就是我在對硬碟做操作的時候….選錯硬碟去 clean 了!!阿阿阿阿…當下差點哭出來還好經過一些爬文有找到解決方式順便記錄一下">
 <meta name="keywords" content="w3HexSchool,windows,diskpart,testdisk">
 <meta property="og:type" content="article">
 <meta property="og:title" content="重灌 Windows 作業系統時，不小心使用 diskpart 指令去 clean 硬碟，救援硬碟的方法">
 <meta property="og:url" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;index.html">
 <meta property="og:site_name" content="王子の技術部落">
-<meta property="og:description" content="專攻C# WINFROM，最近在學JS">
+<meta property="og:description" content="這禮拜都在重灌電腦但在重灌的時候發生了一件事!!就是我在對硬碟做操作的時候….選錯硬碟去 clean 了!!阿阿阿阿…當下差點哭出來還好經過一些爬文有找到解決方式順便記錄一下">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-10-31T08:07:40.147Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;0.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;6.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;5.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;7.jpg">
+<meta property="og:updated_time" content="2020-11-01T06:07:31.021Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;10&#x2F;31&#x2F;install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk&#x2F;0.jpg">
   
     <link rel="alternate" href="/atom.xml" title="王子の技術部落" type="application/atom+xml">
   
@@ -89,11 +98,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>這禮拜都在重灌電腦<br>但在重灌的時候發生了一件事!!<br>就是我在對硬碟做操作的時候….<br>選錯硬碟去 clean 了!!阿阿阿阿…當下差點哭出來<br>還好經過一些爬文有找到解決方式<br>順便記錄一下</p>
+<a id="more"></a>
+
+<p>首先放入作業系統光碟或使用開機隨身碟開機後<br>到某一個步驟<br>會有一個選擇作業系統安裝在哪一個硬碟的畫面</p>
+<p>在這個地方按 Shift + F10</p>
+<p><img src="0.jpg" alt=""></p>
+<p>就可以叫出一個 cmd 的畫面<br>然後在那邊輸入 diskpart 就可以對硬碟區做一些操作</p>
+<p>官方文件說明<br><a href="https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/diskpart" target="_blank" rel="noopener">https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/diskpart</a></p>
+<p>然後選擇硬碟的部分，我不小心選到了我的 HDD 資料碟並 clean 了他 QQ<br>當下真的崩潰，不過可能也是對指令不熟悉才會那麼緊張</p>
+<p>本來是打說花錢買軟體來救了<br>但剛好在爬文的過程中<br>看到了有人使用 testdisk 去把硬碟的資料救援了回來</p>
+<p>選擇 Create 後按 Enter<br><img src="1.jpg" alt=""><br>選擇要回復的硬碟<br><img src="6.jpg" alt=""><br>選擇 Intel<br><img src="2.jpg" alt=""><br>選擇 Analyse<br><img src="3.jpg" alt=""><br>選擇 Quick Start<br>我是拆三個磁區所以沒錯<br><img src="4.jpg" alt=""><br>在這邊繼續按 Enter<br><img src="5.jpg" alt=""><br>在這個地方按 Write 就會開始復原了<br><img src="7.jpg" alt=""></p>
+<div style="border-left:4px solid #333;padding-left:12px;margin:20px 0px;font-style:italic;">
+<a style="color:red;font-size:14px;">
+<br>因為也是第一次使用</br>
+<br>當時很急並且也沒有思考安全性的問題</br>
+<br>所以如果有疑慮的可能可以再思考其他救援方式</br>
+</a>
+<a style="color:red;font-size:20px;">
+<br>然後~下次重灌記得要拔掉其他硬碟阿~~~~~~!!</br>
+</a>
+</div>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/" data-id="ckgxel0rw000tmguq5vi6cpdq" class="article-share-link">Share</a>
+      <a data-url="https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/" data-id="ckgypqwm4000uwwuq7h66hroo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diskpart/" rel="tag">diskpart</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/testdisk/" rel="tag">testdisk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li></ul>

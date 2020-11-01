@@ -6,7 +6,7 @@
   <link href="https://gn02618594.github.io/atom.xml" rel="self"/>
   
   <link href="https://gn02618594.github.io/"/>
-  <updated>2020-10-31T08:07:40.147Z</updated>
+  <updated>2020-11-01T06:07:31.021Z</updated>
   <id>https://gn02618594.github.io/</id>
   
   <author>
@@ -21,8 +21,12 @@
     <link href="https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/"/>
     <id>https://gn02618594.github.io/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/</id>
     <published>2020-10-31T08:05:34.000Z</published>
-    <updated>2020-10-31T08:07:40.147Z</updated>
+    <updated>2020-11-01T06:07:31.021Z</updated>
     
+    <content type="html"><![CDATA[<p>這禮拜都在重灌電腦<br>但在重灌的時候發生了一件事!!<br>就是我在對硬碟做操作的時候….<br>選錯硬碟去 clean 了!!阿阿阿阿…當下差點哭出來<br>還好經過一些爬文有找到解決方式<br>順便記錄一下</p><a id="more"></a><p>首先放入作業系統光碟或使用開機隨身碟開機後<br>到某一個步驟<br>會有一個選擇作業系統安裝在哪一個硬碟的畫面</p><p>在這個地方按 Shift + F10</p><p><img src="0.jpg" alt=""></p><p>就可以叫出一個 cmd 的畫面<br>然後在那邊輸入 diskpart 就可以對硬碟區做一些操作</p><p>官方文件說明<br><a href="https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/diskpart" target="_blank" rel="noopener">https://docs.microsoft.com/zh-tw/windows-server/administration/windows-commands/diskpart</a></p><p>然後選擇硬碟的部分，我不小心選到了我的 HDD 資料碟並 clean 了他 QQ<br>當下真的崩潰，不過可能也是對指令不熟悉才會那麼緊張</p><p>本來是打說花錢買軟體來救了<br>但剛好在爬文的過程中<br>看到了有人使用 testdisk 去把硬碟的資料救援了回來</p><p>選擇 Create 後按 Enter<br><img src="1.jpg" alt=""><br>選擇要回復的硬碟<br><img src="6.jpg" alt=""><br>選擇 Intel<br><img src="2.jpg" alt=""><br>選擇 Analyse<br><img src="3.jpg" alt=""><br>選擇 Quick Start<br>我是拆三個磁區所以沒錯<br><img src="4.jpg" alt=""><br>在這邊繼續按 Enter<br><img src="5.jpg" alt=""><br>在這個地方按 Write 就會開始復原了<br><img src="7.jpg" alt=""></p><div style="border-left:4px solid #333;padding-left:12px;margin:20px 0px;font-style:italic;"><a style="color:red;font-size:14px;"><br>因為也是第一次使用</br><br>當時很急並且也沒有思考安全性的問題</br><br>所以如果有疑慮的可能可以再思考其他救援方式</br></a><a style="color:red;font-size:20px;"><br>然後~下次重灌記得要拔掉其他硬碟阿~~~~~~!!</br></a></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;這禮拜都在重灌電腦&lt;br&gt;但在重灌的時候發生了一件事!!&lt;br&gt;就是我在對硬碟做操作的時候….&lt;br&gt;選錯硬碟去 clean 了!!阿阿阿阿…當下差點哭出來&lt;br&gt;還好經過一些爬文有找到解決方式&lt;br&gt;順便記錄一下&lt;/p&gt;</summary>
     
     
     
