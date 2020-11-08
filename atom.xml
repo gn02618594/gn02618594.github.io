@@ -6,7 +6,7 @@
   <link href="https://gn02618594.github.io/atom.xml" rel="self"/>
   
   <link href="https://gn02618594.github.io/"/>
-  <updated>2020-11-01T06:07:31.021Z</updated>
+  <updated>2020-11-08T14:33:16.441Z</updated>
   <id>https://gn02618594.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用 Visual Stuido 打開 mvc 專案 出現 csproj 沒有編輯器可以使用</title>
+    <link href="https://gn02618594.github.io/2020/11/08/use-visual-studio-to-open-different-version-mvc-sln/"/>
+    <id>https://gn02618594.github.io/2020/11/08/use-visual-studio-to-open-different-version-mvc-sln/</id>
+    <published>2020-11-08T14:05:03.000Z</published>
+    <updated>2020-11-08T14:33:16.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>再用 Visual Stuido 2019 去打開別人的 MVC 專案的時候<br>出現了一點錯誤訊息<br>紀錄一下解決方法</p><a id="more"></a><p>在使用開啟專案與解決方式方案去開啟<br>專案名稱.sln 的檔案之後</p><p><img src="0.png" alt=""></p><p>出現了 csproj 沒有編輯器可以使用的這個錯誤<br><img src="2.png" alt=""></p><p>經過爬文了解到<br>在專案資料夾下<br>有一個<br>專案名.csproj 的檔案</p><p><img src="1.png" alt=""></p><p>打開他之後<br>找到標籤名為<br>ProjectTypeGuids 的那一行<br>可以看到在分號的前後各有一組號碼</p><p>{fae04ec0-301f-11d3-bf4b-00c04f79efbc} 代表的是 C# 專案<br>{349c5851-65df-11da-9384-00065b846f21} 代表的是 MVC 5 專案</p><p><img src="4.png" alt=""></p><p>自己目前是知道兩種解法<br>一種是在專案點選右鍵<br>然後點選 管理 NuGet 套件</p><p><img src="5.png" alt=""></p><p>然後按還原就可以正常使用了<br>但是我是用 Visual Stuido 2019 去試<br>沒有試過其他版本的<br><img src="6.png" alt=""></p><p>另一種方法<br>就奇怪了</p><p>我們先去編輯副檔名為 csproj 的檔案<br>然後把 {349c5851-65df-11da-9384-00065b846f21} 這一段跟分號刪掉然後存檔<br>存檔之後我們打開這一個專案<br>他會變成 C# 專案<br><img src="7.png" alt=""></p><p>這個時候再把專案關掉<br>並且把<br>{349c5851-65df-11da-9384-00065b846f21}; 這一段回復到他原本的位置<br>再開啟專案，他會回復成網頁的專案，而且竟然就沒有那個錯誤了!<br><img src="8.png" alt=""></p><div style="border-left:4px solid #333;padding-left:12px;margin:20px 0px;font-style:italic;"><a style="color:red;font-size:14px;"><br>有在試著找出可以治本的方式</br><br>但是目前只知道這兩個治標方法</br></div>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;再用 Visual Stuido 2019 去打開別人的 MVC 專案的時候&lt;br&gt;出現了一點錯誤訊息&lt;br&gt;紀錄一下解決方法&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="w3HexSchool" scheme="https://gn02618594.github.io/tags/w3HexSchool/"/>
+    
+    <category term="C#" scheme="https://gn02618594.github.io/tags/C/"/>
+    
+    <category term="ASP.NET" scheme="https://gn02618594.github.io/tags/ASP-NET/"/>
+    
+    <category term="MVC" scheme="https://gn02618594.github.io/tags/MVC/"/>
+    
+  </entry>
   
   <entry>
     <title>重灌 Windows 作業系統時，不小心使用 diskpart 指令去 clean 硬碟，救援硬碟的方法</title>
@@ -453,27 +478,6 @@
     <category term="w3HexSchool" scheme="https://gn02618594.github.io/tags/w3HexSchool/"/>
     
     <category term="hexo" scheme="https://gn02618594.github.io/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>radiobutton 再次點擊 取消選取</title>
-    <link href="https://gn02618594.github.io/2019/11/26/c-shap-radio-click-cancel/"/>
-    <id>https://gn02618594.github.io/2019/11/26/c-shap-radio-click-cancel/</id>
-    <published>2019-11-26T12:00:00.000Z</published>
-    <updated>2020-07-05T15:13:44.639Z</updated>
-    
-    <content type="html"><![CDATA[<p>新增一個元件</p><a id="more"></a><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">partial</span> <span class="keyword">class</span> <span class="title">UserControlRadioButton</span> : <span class="title">RadioButton</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span>判斷是否有改變Checked<span class="doctag">&lt;/summary&gt;</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">private</span> <span class="keyword">bool</span> bCheckedChanged = <span class="literal">false</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">SLHRadioButton</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>        &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">            InitializeComponent();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnCheckedChanged</span>(<span class="params">EventArgs e</span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>        &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">base</span>.OnCheckedChanged(e);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">this</span>.bCheckedChanged = <span class="literal">true</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">OnClick</span>(<span class="params">EventArgs e</span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>        &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">this</span>.bCheckedChanged = <span class="literal">false</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">base</span>.OnClick(e);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.Checked &amp;&amp; !<span class="keyword">this</span>.bCheckedChanged) <span class="keyword">this</span>.Checked = <span class="literal">false</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">            <span class="keyword">this</span>.bCheckedChanged = <span class="literal">false</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">        &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;新增一個元件&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="C#" scheme="https://gn02618594.github.io/tags/C/"/>
-    
-    <category term="WINFROM" scheme="https://gn02618594.github.io/tags/WINFROM/"/>
     
   </entry>
   
