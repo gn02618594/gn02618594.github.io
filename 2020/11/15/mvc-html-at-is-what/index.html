@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>MVC 專案在 Views 資料夾裡的那些 cshtml 檔的 @at | 王子の技術部落</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一開始為了學 MVC 時直接新建 MVC 專案但是裡面有些東西都看不懂最近看書理解了一點紀錄一下">
+<meta name="keywords" content="w3HexSchool,C#,ASP.NET,MVC">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MVC 專案在 Views 資料夾裡的那些 cshtml 檔的 @at">
+<meta property="og:url" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;index.html">
+<meta property="og:site_name" content="王子の技術部落">
+<meta property="og:description" content="一開始為了學 MVC 時直接新建 MVC 專案但是裡面有些東西都看不懂最近看書理解了一點紀錄一下">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;4.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;5.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;6.jpg">
+<meta property="og:updated_time" content="2020-11-15T14:24:19.710Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;15&#x2F;mvc-html-at-is-what&#x2F;1.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="王子の技術部落" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo" style="color: #000">王子の技術部落</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle" style="color: #000">隨做筆記</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://gn02618594.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mvc-html-at-is-what" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/15/mvc-html-at-is-what/" class="article-date">
+  <time datetime="2020-11-15T13:34:18.000Z" itemprop="datePublished">2020-11-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MVC 專案在 Views 資料夾裡的那些 cshtml 檔的 @at
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一開始為了學 MVC 時<br>直接新建 MVC 專案<br>但是裡面有些東西都看不懂<br>最近看書理解了一點<br>紀錄一下</p>
+<a id="more"></a>
+
+
+<p>在這邊可以看到 @ 這個符號<br>這個的意思是 在 cshtml 裡要使用 C# 語法<br>要加上 @ 才能使用</p>
+<p><img src="1.jpg" alt=""></p>
+<p>那在 Controller 及 cshtml 裡都可以看得的 ViewBag 是什麼意思呢<br>那是 Controller 傳遞資料到 View 的方式</p>
+<p><img src="2.jpg" alt=""></p>
+<p>Controller 傳遞資料到 View 的方式有四種</p>
+<p><a style="color:red;font-size:20px">ViewData</a><br>為 ViewDataDictionary 型別，key 與 value 成對的 Dictionary</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Controller</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Pratice</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	ViewData[<span class="string">"Name"</span>]=<span class="string">"Andy"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> View();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//View</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&lt;a&gt;Name:@ViewData[<span class="string">"Name"</span>]&lt;/a&gt;</span></pre></td></tr></table></figure>
+<p>記得 Controller 的前面單字要跟 View 一樣<br><img src="3.jpg" alt=""></p>
+<p><a style="color:red;font-size:20px">ViewBag</a><br>dynamic 動態型別 Property，內部為 DynamicViewDataDictionary 型別</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Controller</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Pratice</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	ViewBag.Name=<span class="string">"Andy"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> View();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//View</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&lt;a&gt;Name:@ViewBag.Name&lt;/a&gt;</span></pre></td></tr></table></figure>
+<p><img src="4.jpg" alt=""><br><a style="color:red;font-size:20px">Model</a><br>為廣義的資料模型，集合、陣列或物件都可做為 Model 傳遞至 View</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Controller</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Pratice</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	List&lt;<span class="keyword">string</span>&gt; students = <span class="keyword">new</span> List&lt;<span class="keyword">string</span>&gt;();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	students.Add(<span class="string">"Andy"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	students.Add(<span class="string">"Jack"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">	ViewData.Model = students;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> View();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//View</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    @<span class="keyword">foreach</span> (<span class="keyword">var</span> student <span class="keyword">in</span> Model)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    &#123; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">    &lt;li&gt;@student&lt;/li&gt;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">    &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">&lt;/ul&gt;</span></pre></td></tr></table></figure>
+<p><img src="5.jpg" alt=""><br><a style="color:red;font-size:20px">TempData</a><br>TempDataDictionary 型別，也是key 與 value 成對的 Dictionary<br><a style="color:red">差別在因為用來跨 Controller/Action 傳遞資料，資料儲存在 Session 不會因為網頁轉向而消失</a></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Controller</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ActionResult <span class="title">Pratice</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	TempData[<span class="string">"Message"</span>] = <span class="string">"到餐廳"</span>;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="comment">//(Action 名稱,Controller 名稱)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> RedirectToAction(<span class="string">"Restaurant"</span>, <span class="string">"Restaurant"</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">public</span> ActionResult <span class="title">Restaurant</span>(<span class="params"></span>)</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="function"></span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	<span class="comment">//檢查是否有 key</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">if</span> (!TempData.ContainsKey(<span class="string">"Message"</span>))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">		<span class="comment">//不回傳任何東西</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> EmptyResult();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">	<span class="comment">//系統保留 TempData 資料</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">	TempData.Keep();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">	<span class="comment">//保留指定資料</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">	<span class="comment">//TempData.Keep["Message"]; </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">return</span> View();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//View</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line"><span class="comment">//Restaurant.cshtml</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">&lt;a&gt;到哪了:@TempData[<span class="string">"Message"</span>]&lt;/a&gt;</span></pre></td></tr></table></figure>
+<p><img src="6.jpg" alt=""></p>
+<p>這次的紀錄就到這~</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://gn02618594.github.io/2020/11/15/mvc-html-at-is-what/" data-id="ckhj7ng0f000sg8uqh5u9cvju" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/08/use-visual-studio-to-open-different-version-mvc-sln/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用 Visual Stuido 打開 mvc 專案 出現 csproj 沒有編輯器可以使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CI/" rel="tag">CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UnitTest/" rel="tag">UnitTest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/WINFROM/" rel="tag">WINFROM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/circleci/" rel="tag">circleci</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diskpart/" rel="tag">diskpart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/" rel="tag">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/" rel="tag">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mvc/" rel="tag">mvc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/testdisk/" rel="tag">testdisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/" rel="tag">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%99%E5%8F%AC/" rel="tag">教召</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%9F%E6%B4%BB/" rel="tag">生活</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ASP-NET/" style="font-size: 14px;">ASP.NET</a> <a href="/tags/C/" style="font-size: 18px;">C#</a> <a href="/tags/CI/" style="font-size: 10px;">CI</a> <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/MVC/" style="font-size: 12px;">MVC</a> <a href="/tags/SQL/" style="font-size: 12px;">SQL</a> <a href="/tags/UnitTest/" style="font-size: 10px;">UnitTest</a> <a href="/tags/WINFROM/" style="font-size: 16px;">WINFROM</a> <a href="/tags/circleci/" style="font-size: 10px;">circleci</a> <a href="/tags/diskpart/" style="font-size: 10px;">diskpart</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/mvc/" style="font-size: 10px;">mvc</a> <a href="/tags/testdisk/" style="font-size: 10px;">testdisk</a> <a href="/tags/w3HexSchool/" style="font-size: 20px;">w3HexSchool</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/%E6%95%99%E5%8F%AC/" style="font-size: 10px;">教召</a> <a href="/tags/%E7%94%9F%E6%B4%BB/" style="font-size: 10px;">生活</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/15/mvc-html-at-is-what/">MVC 專案在 Views 資料夾裡的那些 cshtml 檔的 @at</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/08/use-visual-studio-to-open-different-version-mvc-sln/">使用 Visual Stuido 打開 mvc 專案 出現 csproj 沒有編輯器可以使用</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/31/install-windows-to-use-diskpart-to-clean-disk-ues-testdisk-to-reduction-disk/">重灌 Windows 作業系統時，不小心使用 diskpart 指令去 clean 硬碟，救援硬碟的方法</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/25/use-javascript-to-do-a-easy-message-board/">使用 JS 以及 HTML 做一個簡易的留言版</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/18/SQL-LocalDB-Different-version-not-open/">舊版本 SQL SERVR 無法開啟新版本 LocalDB</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Prince<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
