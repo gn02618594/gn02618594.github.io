@@ -5,30 +5,23 @@
   
 
   
-  <title>SQL-SERVER 安裝 | 王子の技術部落</title>
+  <title>MVC 使用 Scaffolding 快速建立 CRUD | 王子の技術部落</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="因為想要使用 LocalDB但是自己電腦怎麼嘗試都沒辦法也找很多文章也有詢問別人還是找不出原因所以就想說重新安裝看看有能不能使用也順便記錄一下">
-<meta name="keywords" content="w3HexSchool,SQL">
+  <meta name="description" content="MVC 在定義 Models 之後可以透過定義的這個 Models 去快速建立出讀寫程式跟畫面">
+<meta name="keywords" content="w3HexSchool,C#,ASP.NET,MVC">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SQL-SERVER 安裝">
-<meta property="og:url" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;index.html">
+<meta property="og:title" content="MVC 使用 Scaffolding 快速建立 CRUD">
+<meta property="og:url" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;29&#x2F;mvc-use-Scaffolding-to-create-crud&#x2F;index.html">
 <meta property="og:site_name" content="王子の技術部落">
-<meta property="og:description" content="因為想要使用 LocalDB但是自己電腦怎麼嘗試都沒辦法也找很多文章也有詢問別人還是找不出原因所以就想說重新安裝看看有能不能使用也順便記錄一下">
+<meta property="og:description" content="MVC 在定義 Models 之後可以透過定義的這個 Models 去快速建立出讀寫程式跟畫面">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;1.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;2.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;3.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;4.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;5.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;6.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;7.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;8.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;9.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;11.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;10.png">
-<meta property="og:updated_time" content="2020-09-27T15:00:29.605Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;29&#x2F;mvc-use-Scaffolding-to-create-crud&#x2F;1.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;29&#x2F;mvc-use-Scaffolding-to-create-crud&#x2F;2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;29&#x2F;mvc-use-Scaffolding-to-create-crud&#x2F;3.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;29&#x2F;mvc-use-Scaffolding-to-create-crud&#x2F;4.jpg">
+<meta property="og:updated_time" content="2020-11-29T15:05:48.747Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;09&#x2F;27&#x2F;MS-SQL-Installer&#x2F;1.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;gn02618594.github.io&#x2F;2020&#x2F;11&#x2F;29&#x2F;mvc-use-Scaffolding-to-create-crud&#x2F;1.jpg">
   
     <link rel="alternate" href="/atom.xml" title="王子の技術部落" type="application/atom+xml">
   
@@ -79,10 +72,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-MS-SQL-Installer" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-mvc-use-Scaffolding-to-create-crud" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2020/09/27/MS-SQL-Installer/" class="article-date">
-  <time datetime="2020-09-27T13:37:12.000Z" itemprop="datePublished">2020-09-27</time>
+    <a href="/2020/11/29/mvc-use-Scaffolding-to-create-crud/" class="article-date">
+  <time datetime="2020-11-29T14:27:11.000Z" itemprop="datePublished">2020-11-29</time>
 </a>
     
   </div>
@@ -93,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SQL-SERVER 安裝
+      MVC 使用 Scaffolding 快速建立 CRUD
     </h1>
   
 
@@ -101,25 +94,32 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>因為想要使用 LocalDB<br>但是自己電腦怎麼嘗試都沒辦法<br>也找很多文章也有詢問別人<br>還是找不出原因<br>所以就想說重新安裝看看有能不能使用<br>也順便記錄一下</p>
+        <p>MVC 在定義 Models 之後<br>可以透過定義的這個 Models 去快速建立出讀寫程式跟畫面</p>
 <a id="more"></a>
 
-<p>無法使用 LocalDB 的錯誤訊息<br><img src="1.jpg" alt="">)<img src="2.jpg" alt="">)<img src="3.jpg" alt=""></p>
-<p>本來是使用 2014 版本<br>想趁著這次機會裝更新版的<br>但發現….<br>2016、2017、2019 都不支援 WIN7<br>所以還是只能裝 2014</p>
-<p>執行安裝檔執行新增 SQL SERVER<br><img src="4.png" alt=""><br>選擇要安裝的功能<br><img src="5.png" alt=""><br>設定伺服器名稱<br>有參考文章發現<br>不知為什麼這邊的安裝的執行個體是空的<br>會不會沒辦法用 LocalDB 是跟這邊有關<br><img src="6.png" alt=""></p>
-<p><img src="7.png" alt=""><br>設定密碼<br>也可以選擇 WINDOWS 驗證<br>但覺得如果是要給程式連接資料庫使用<br>有設置密碼可能沒那麼多問題<br>不知 WINDOWS 驗證是透過什麼去驗證的<br><img src="8.png" alt=""></p>
-<p>這樣就安裝完了<br><img src="9.png" alt=""></p>
-<p>組態管理員也有執行中<br><img src="11.png" alt=""></p>
-<p>結果又是不一樣的錯誤訊息<br><img src="10.png" alt=""></p>
-<p>看來還要在試一下了</p>
+<p>Scaffolding 是 Visual Studio 用來產生各種 MVC 程式樣板的程式產生框架<br>透過 Scaffolding 可迅速產出 CRUD 相關的檔案<br>立即建立出現成可用的網頁資料庫程式</p>
+<p>首先新建一個 MVC 專案<br>並且在 Models 資料夾加入一個 Client.cs 模型<br>按 Ctrl + S (儲存)</p>
+<p style="color:red;font-size:20px">再按 Ctrl + Shift + B (建置專案)，這一步很重要，沒先按的話，後面建立時會跳錯誤訊息</p>
+
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Client</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> ID &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Phone &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> Email &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> City &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+
+<p>然後在 Controllers 資料夾右鍵<br>加入-新增 Scaffold 項目</p>
+<p><img src="1.jpg" alt=""></p>
+<p>選擇具有檢視、使用 Entity Framework 的 MVC 5 控制器</p>
+<p><img src="2.jpg" alt=""></p>
+<p>然後在模型類別選擇剛剛新增的 Client<br>在資料內容類別右邊點選 + 號，名稱改為 ClientContext<br>然後按加入</p>
+<p><img src="3.jpg" alt=""></p>
+<p>就會快速的產生出 CRUD 需要的檔案</p>
+<p><img src="4.jpg" alt=""></p>
+<p>這邊就是使用 Scaffolding 快速建立的方式</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://gn02618594.github.io/2020/09/27/MS-SQL-Installer/" data-id="cki39ahqb000a3wuq19rk2dpw" class="article-share-link">Share</a>
+      <a data-url="https://gn02618594.github.io/2020/11/29/mvc-use-Scaffolding-to-create-crud/" data-id="cki39ahrq000y3wuq3a438rm9" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ASP-NET/" rel="tag">ASP.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C#</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MVC/" rel="tag">MVC</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/w3HexSchool/" rel="tag">w3HexSchool</a></li></ul>
 
     </footer>
   </div>
@@ -127,19 +127,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2020/10/04/Use-C-Sharp-To-UnitTest/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          使用 C# 與 Visual Studio 練習簡單的單元測試
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/09/15/Net-Core-WEB-API-Pratice-2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2020/11/22/pratice-bootstrap/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">使用 .NET Core 練習 ASP.NET WEB API 2</div>
+      <div class="article-nav-title">練習 bootstrap</div>
     </a>
   
 </nav>
